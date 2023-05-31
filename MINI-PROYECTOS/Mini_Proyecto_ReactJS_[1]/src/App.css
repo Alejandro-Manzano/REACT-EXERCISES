@@ -1,0 +1,33 @@
+.characterList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.characterCard {
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.characterImage {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.characterName {
+  margin-top: 10px;
+}
+
+.characterStatus {
+  color: green;
+  font-weight: bold;
+}
+
+.characterOrigin {
+  margin-top: 5px;
+}
