@@ -1,5 +1,7 @@
 import './App.css'
-import DigitalClock from './components/DigitalClock/DigitalClock'
+import Countdown from './components/Countdown/Countdown';
+import DigitalClock from './components/DigitalClock/DigitalClock';
+import Stopwatch from './components/Stopswatch/Stopwatch';
 
 function App() {
 
@@ -7,6 +9,8 @@ function App() {
     <div>
       
       <DigitalClock></DigitalClock>
+      <Countdown></Countdown>
+      <Stopwatch></Stopwatch>
 
     </div>
   )
