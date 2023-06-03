@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
+import "./Countdown.css";
 //dependencia para poder seleccionar cualquier día en un calendario
 import "react-datepicker/dist/react-datepicker.css";
 
