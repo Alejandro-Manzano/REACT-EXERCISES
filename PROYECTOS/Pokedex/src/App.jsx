@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import Axios from "axios";
 
 const App = () => {
-  const [pokemonName, setPokemonName] = useState("");
-  const [pokemonChosen, setPokemonChosen] = useState(false);
-  const [pokemon, setPokemon] = useState({
+  // Declaración de los estados utilizando el hook useState
+  const [pokemonName, setPokemonName] = useState(""); // Estado para almacenar el nombre del Pokémon ingresado por el usuario
+  const [pokemonChosen, setPokemonChosen] = useState(false); // Estado para determinar si se ha seleccionado un Pokémon
+  const [pokemon, setPokemon] = useState({ // Estado para almacenar los datos del Pokémon seleccionado
     name: "",
     number: "",
     species: "",
@@ -17,9 +18,11 @@ const App = () => {
     type: "",
   });
 
+  // Función para buscar el Pokémon utilizando la API de PokeAPI
   const searchPokemon = () => {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then(
       (res) => {
+        // Actualiza el estado del Pokémon con los datos obtenidos de la respuesta de la API
         setPokemon({
           name: pokemonName,
           number: res.data.id,
@@ -31,11 +34,11 @@ const App = () => {
           speed: res.data.stats[5].base_stat,
           type: res.data.types[0].type.name,
         });
+        // Marca el estado de pokemonChosen como true para indicar que se ha elegido un Pokémon
         setPokemonChosen(true);
       }
     );
   };
-
   return (
     <div className="App">
       <div className="TitleSection">
@@ -47,9 +50,11 @@ const App = () => {
           }}
           value={pokemonName.toLowerCase()}
         />
+        {/* El botón activa search pokemon  */}
         <button onClick={searchPokemon}>Search Pokémon</button>
       </div>
       <div className="DisplaySection">
+        {/* Condicional para mostrar la información del Pokémon si se ha elegido uno */}
         {!pokemonChosen ? (
           <h1> Please choose a Pokémon </h1>
         ) : (
@@ -68,5 +73,9 @@ const App = () => {
       </div>
     </div>
   );
+  
+
+
 };
+
 export default App;
