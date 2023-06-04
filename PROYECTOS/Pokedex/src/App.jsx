@@ -18,11 +18,11 @@ const App = () => {
     type: "",
   });
 
-  // Función para buscar el Pokémon utilizando la API de PokeAPI
+  
   const searchPokemon = () => {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then(
       (res) => {
-        // Actualiza el estado del Pokémon con los datos obtenidos de la respuesta de la API
+        // Actualiza el estado del Pokémon con los datos obtenidos de la respuesta de la api
         setPokemon({
           name: pokemonName,
           number: res.data.id,
