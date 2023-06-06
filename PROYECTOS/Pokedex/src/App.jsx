@@ -17,7 +17,6 @@ const App = () => {
     speed: "",
     type: "",
   });
-
   
   const searchPokemon = () => {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then(
